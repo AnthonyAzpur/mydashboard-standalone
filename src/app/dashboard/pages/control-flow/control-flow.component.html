@@ -1,0 +1,58 @@
+<section class="grid grid-cols-1 md:grid-cols-2 gap-3">
+  <!-- if -->
+  <div class="bg-white rounded shadow p-10">
+    <h2 class="text-2x1 font-bold mb-5">if:{{ showContent() }}
+    </h2>
+    <button
+      type="button"
+      class="p-2 bg-blue-500 rounded text-white"
+      (click)="toggleContent()"
+    >
+      click me!
+    </button>
+    @if (showContent()) {
+      <p>Hola clic</p>
+    }@else {
+      <p>*******</p>    }
+
+    <!-- Switch -->
+  </div>
+  <div class="bg-white rounded shadow p-10">
+    <h2 class="text-3xl">{{grade()}}</h2>
+    @switch (grade()) {
+      @case ('A'){
+        <p>Arriba de 18</p>
+      }
+      @case ('B'){
+        <p>Arriba de 15</p>
+      }
+      @default{
+        <p>Abajo de  10</p>
+      }
+    }
+  </div>
+  <!-- for -->
+
+<div class="bg-white rounded shadow p-10">
+  <ul>
+      @for (frameworks of frameworks(); track frameworks; let i = $index) {
+        <li>{{ i + 1 }}-{{ frameworks }}</li>
+      }
+  </ul>
+</div>
+
+<div class="bg-white rounded shadow p-10">
+  <ul>
+      @for (frameworks of frameworks2(); track $index) {
+        <li>{{ frameworks }}</li>
+      } @empty {
+        <li>No hay framworks Agregados</li>
+      }
+  </ul>
+</div>
+
+
+
+
+
+</section>
