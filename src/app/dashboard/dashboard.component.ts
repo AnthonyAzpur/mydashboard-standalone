@@ -10,5 +10,6 @@ import { SidemenuComponent } from '@shared/sidemenu/sidemenu.component';
   styles: ``
 })
 export default class DashboardComponent {
+  
 
 }
